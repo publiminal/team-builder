@@ -58,6 +58,8 @@ input, select, button {
   width: 15rem;
   margin: 8px 8px 8px 0;
   background-color: #00000030;
+
+  color: antiquewhite;
 }
 button {
   color: crimson;
@@ -78,6 +80,7 @@ button :disabled {
 
 .error {
   color: red;
+  text-align: right;
 }
 
 ::selection {
@@ -86,9 +89,6 @@ button :disabled {
 }
 
 select option{
-  color: aqua;
-  background:gray ;
-}
-select option:first-child{
-  color: green;
+  color: gray;
+  background:aqua;
 }

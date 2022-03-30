@@ -1,9 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-
 import UserForm from './components/UserForm'
 import Team from './components/Team'
-
+import axios from './axios'
 
 export default function App() {
 
@@ -20,7 +19,7 @@ export default function App() {
   */
   const [formErrors, setFormErrors] = useState(null);
   const [formData, setFormData] = useState(initFormData)
-  const [team, setTeam] = useState([]) // careful what you initialize your state to
+  const [team, setTeam] = useState([])
 
 
   const updateForm = (inputName, inputValue) => {
@@ -30,14 +29,23 @@ export default function App() {
   const submitForm = () => {
     
     const newUser = { username:formData.username.trim(), email:formData.email.trim(), role: formData.role }
-    if (!newUser.username || !newUser.email || !newUser.role) {
-      setFormData("review your info");
-      return;
-    }
+    console.log('new User ', newUser)
+    if (!newUser.username || !newUser.email || !newUser.role) {setFormErrors("review your info"); return; }
+
+    axios.post("nowhere.com", newUser)
+    .then(res => {
+      // console.log('after axios',  res.data);
+      setTeam([res.data, ...team]);
+      setFormData(initFormData);
+      setFormErrors("");
+    }).catch(err => console.error(err))
+
 
   }
 
-
+  useEffect(() => {
+    axios.get('nowhere.com').then(res => setTeam(res.data))
+  }, [])
 
   /* Render /////////////////////////////////////////////////// 
   *
