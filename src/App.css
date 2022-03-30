@@ -1,0 +1,94 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(244, 244, 244, 0.424);
+  color: rgb(65, 75, 60);
+  font-family: 'Bitter', serif;
+  padding: 32px;
+}
+
+.App {
+  /* text-align: center; */
+  background-color: #282c34;
+  min-height: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: rgba(245, 245, 245, 0.664);
+}
+
+.formBox {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  padding: 32px;
+  /* background-color: white; */
+  margin-bottom: 24px;
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 255, .2);
+}
+
+h1, h2, h3, h4 {
+  color: rgb(176, 194, 199);
+}
+h1 {
+  font-size: calc(20px + 2vmin);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+label {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  grid-gap: 2rem;
+}
+input, select, button {
+  height: 1.5rem;
+  width: 15rem;
+  margin: 8px 8px 8px 0;
+  background-color: #00000030;
+}
+button {
+  color: crimson;
+  /* background-color: burlywood; */
+  border: 1px solid burlywood;
+}
+
+button :disabled {
+  cursor: not-allowed;
+  color: darkgray;
+  border-color: darkgray;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.error {
+  color: red;
+}
+
+::selection {
+  color: aqua;
+  background:gray ;
+}
+
+select option{
+  color: aqua;
+  background:gray ;
+}
+select option:first-child{
+  color: green;
+}
